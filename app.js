@@ -33,7 +33,6 @@ app.listen(port, () => {
     console.log("Server is runing on port 3000");
 });
 
-// ejs
 
 
 function additem(item) {
