@@ -3,16 +3,18 @@ const bodyParser = require("body-parser")
 
 
 const app = express();
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.static("public"));
 const port = 3000
 
 app.set('view engine', 'ejs');
 
+
 const work = "Android app developer"
-var options = { weekday: 'long', month: 'long', day: 'numeric' };
-var today = new Date();
-var day = today.toLocaleDateString("en-US", options);
-var items = [];
+let options = { weekday: 'long', month: 'long', day: 'numeric' };
+const today = new Date();
+let day = today.toLocaleDateString("en-US", options);
+let items = [];
 
 
 app.get("/",(req,res)=>{
